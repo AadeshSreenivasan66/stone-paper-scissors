@@ -8,15 +8,27 @@ You can also include images in this folder and reference them in the markdown. E
 -->
 
 ## How it works
-This project implements the Stone-Paper-Scissors game using Verilog. Each player selects a move using two input bits (00 = Stone, 01 = Paper, 10 = Scissors). The circuit compares the moves and outputs the winner:
-00: Tie
-01: Player 1 wins
-10: Player 2 wins
-11: Invalid input
-The output updates instantly when inputs change.
+The design uses four main states to control the game:
+State Name	Binary Code	Description
+S_IDLE	000	Waiting for the start signal.
+S_EVALUATE	001	Evaluates the moves of both players.
+S_RESULT	010	Displays the result (Winner, Tie, or Invalid).
+S_RESET	011	Resets the game back to the idle state.
+The module continuously monitors player inputs.
+When start = 1, the FSM moves from S_IDLE → S_EVALUATE → S_RESULT.
+The output winner shows the game result.
+The FSM stays in S_RESULT until start = 0, which returns it to S_IDLE.
 
 ## How to test
-Run the simulation in Wokwi.
-Use switches ui[0–1] for Player 1 and ui[2–3] for Player 2 to set moves.
-Check uo[0–1] for the result: Tie, Player 1 wins, Player 2 wins, or invalid input.
-Try different combinations to verify the game logic.
+Setup
+Load the Verilog design into a simulator such as:
+Icarus Verilog, ModelSim, or Vivado.
+Connect appropriate clock and reset signals.
+Steps
+Apply reset = 1 for at least one clock cycle to initialize the FSM.
+Set reset = 0.
+Provide valid moves to p1_move and p2_move.
+Set start = 1 to evaluate moves.
+Observe winner and debug outputs.
+Set start = 0 to return to S_IDLE.
+
