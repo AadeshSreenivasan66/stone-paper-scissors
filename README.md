@@ -26,7 +26,7 @@ Outputs winner, game state, and debug information in real-time.
 | Bit | Name        | Description                    |
 | --- | ----------- | ------------------------------ |
 | 0   | winner[1] | Match result, bit 1 (MSB)      |
-| 1   | `winner[0] | Match result, bit 0 (LSB)      |
+| 1   | winner[0] | Match result, bit 0 (LSB)      |
 | 2   | state[2]  | Current state, bit 2 (MSB)     |
 | 3   | state[1]  | Current state, bit 1           |
 | 4   | state[0]  | Current state, bit 0 (LSB)     |
