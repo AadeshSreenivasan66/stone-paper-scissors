@@ -1,9 +1,9 @@
 # Tiny Tapeout project information
 project:
-  title:        "Stone Paper Scissors"      # Project title
-  author:       "Aadesh Sreenivasab"      # Your name
+  title:        "stone-paper-scissors"      # Project title
+  author:       "Aadesh Sreenivasan"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  description:  "A Verilog implementation of the Stone Paper Scissors game for Wokwi"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
   clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
 
